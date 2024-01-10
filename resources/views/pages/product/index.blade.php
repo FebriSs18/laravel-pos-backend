@@ -72,6 +72,7 @@
                                                 <th scope="col">Name</th>
                                                 <th scope="col">Category</th>
                                                 <th scope="col">Price</th>
+                                                <th scope="col">Photo</th>
                                                 <th scope="col">Stok</th>
                                                 <th scope="col">Created At</th>
                                                 <th scope="col">Action</th>
@@ -83,6 +84,14 @@
                                                     <td>{{ $product->name }}</td>
                                                     <td>{{ $product->category }}</td>
                                                     <td>{{ $product->price }}</td>
+                                                    <td>
+                                                        @if ($product->image)
+                                                        <img src="{{ asset('storage/products/'. $product->image) }}" alt=""
+                                                        width="100px" class="img-thumbnail">
+                                                        @else
+                                                        <span class="badge badge-danger">No Image</span>
+                                                        @endif
+                                                    </td>
                                                     <td>{{ $product->stok }}</td>
                                                     <td>{{ $product->created_at }}</td>
                                                     <td>
